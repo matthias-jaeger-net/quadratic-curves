@@ -7,7 +7,7 @@ def parabula(k, s):
     #endShape()
 
 def setup():
-    size(800, 800)
+    size(900, 400)
     background(0)
     noFill()
     for i in range(9):
@@ -24,3 +24,4 @@ def setup():
             parabula(random(-0.01, 0.01), random(1, 3))
 
             popMatrix()
+    save("cover.jpg")

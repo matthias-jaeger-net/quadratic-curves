@@ -129,6 +129,7 @@ def setup() :
         #
         # Simulating an even preassured brush stroke
         #
+
         # Map the loop variable to a value between -0.5 and 0.5
         s = map(x, -r, r, 1, 100)
 
@@ -144,5 +145,69 @@ def setup() :
     # Done with calculation and drawing
     save("out.jpg")
 
+    exit()
+```
+
+## Adding a grid as a composition structure
+I often work with a grid as a basic structure for a composition. I imagine the grid cells as unique elements that set a call to my curve function, each with different values
+
+### Starting with a simple grid
+To get a grid in ``u`` and ``v`` direction i use two nested for loops and a placeholder rectangle in the first go.
+
+![Basic grid](grid-basic.jpg)
+A grid of squares structures the image
+
+```python
+"""
+Saves an image of a simple grid
+"""
+def setup() :
+
+    # Create a window to draw in
+    size(900, 400)
+
+    # Define a varibale for the scaling
+    s = 100
+
+    # Loop in u and v direction
+    for u in range(9):
+        for v in range(4):
+            rect(u * s, v * s, s, s)
+
+    # Done with calculation and drawing
+    save("out.jpg")
+    exit()
+```
+
+
+### Adding the curve in each grid cell
+
+```python
+"""
+Saves an image of a grid with a quadratic curve in each cell
+"""
+def setup() :
+
+    # Create a window to draw in
+    size(900, 400)
+
+    # Loop in u and v direction
+    for u in range(9):
+        for v in range(4):
+            # Draw the grid bounds with a rectangle
+            rect(u * 100, v * 100, 100, 100)
+
+            # Randomize the look of each curve
+            k = random(-0.03, 0.03)
+
+            for x in range(-50, 50) :
+                # Calculate a y component
+                y = k * x * x
+
+                # Draw the points relative to the grid
+                point(x + u * 100 + 50, y + v * 100 + 50)
+
+    # Done with calculation and drawing
+    save("out.jpg")
     exit()
 ```
