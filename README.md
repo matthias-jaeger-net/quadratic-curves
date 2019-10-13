@@ -53,7 +53,7 @@ def setup() :
     exit()
 ```
 ## What I found out about that k parameter
-It's been a while since I got introduced to quadratic curves in school, I had to freshen up my knowledge a bit. For the first sketch I work with the formula ``F(x) = k * x * x``where k is a value that influences the shape of the curve in my drawing. When k is a negative value the curve opens downwards, when k is a positive value the opposite. The curve also will flatten out to a straight line when k approaches ``Infinity``
+It's been a while since I got introduced to quadratic curves in school, I had to freshen up my knowledge a bit. For the first sketch I work with the formula ``F(x) = k * x * x`` where k is a value that influences the shape of the curve in my drawing. When k is a negative value the curve opens upwards, when k is a positive value the downwards (in the processing coordinate system). The value of k affects how wide the curve opens and also will flatten out to a straight line when k approaches ``Infinity``.
 
 ```python
 for x in range(-r, r):
