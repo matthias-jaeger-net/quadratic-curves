@@ -1,18 +1,27 @@
 # quadratic-curves
 
-Write-up and documentation of research on creating visual composition with using the concept of quadratic equations to create a visually pleasing graphic design.
+Write-up and documentation my process for creating visual compositions using the concept of quadratic equations.
 
 ![Cover](cover.jpg)
 Beta version of the artwork using my building blocks
 
-## Painting curves with brushes
-In one atelier-session we were painting curves with brushes.I was amazed how easily an algorithmic compomposition can be done between two indiviuals. Later on I tried to recreate the algorithm in form of a python script and failed to achive the goals. This repo is a collection of my attempts to understand what it takes.
+## A starting point - painting curves with brushes
+In one atelier-session we were painting curves with brushes.I was amazed how easily an algorithmic compomposition can be done between two indiviuals. Later on I tried to recreate the algorithm in form of a python script and failed to achive the goals. This is a collection of my attempts to understand what it takes to create a visually interesting composition in the form of a python script.
 
-#  Plotting a curve in processing
+# First Steps
+## Starting small scale
+There are many ways to create a curvy shape in Processing. You could look at the PShape object, the curveVertex of a shape or the curveTightness paramtet. All those thing help you to create curves on the computer. What I was looking for was one that enables me to store the points of a shape in a list. This way I can, at a later time, compare two shapes with each other. I didn't use the ``arc()`` method, nor the ``curveVertex()`` so because of this reason. First went for the most basic approach and attempted a single quadratic curve program.
 
-![Curve example](curve.jpg)
+- [x] Make a sketch that plots the points of a single curve
+- [x] Pick one quadratic equasion and test values
+- [x] Refactor to a function definition
+- [x] Make a composition with multiple calls of that function
 
 ## Imagine the following program
+
+![Curve example](curve.jpg)
+An upwards pointing quadratic curve plotted with the code below.
+
 ```python
 def setup() :
     # Create a 900x354 window
@@ -32,8 +41,6 @@ def setup() :
     exit()
 ```
 
-
-There are many ways to create a curvy shape in Processing, but I was looking for one that enables me to store the points of a shape in a list. Therefore I didn't use the ``arc()`` method, nor the ``curveVertex()``so far. I went for the most basic approach and attempted a single quadratic curve program.
 ```python
 for x in range(-r, r):
     y = k * x * x
