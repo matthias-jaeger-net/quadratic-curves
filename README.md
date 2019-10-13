@@ -1,6 +1,8 @@
 # quadratic-curves
 Research on a visual composition of curves with the Processing IDE written in python mode.
 
+![Cover](cover.jpg)
+
 As Kanye West said:
 
 > We're living the future so
