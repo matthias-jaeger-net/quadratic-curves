@@ -182,6 +182,9 @@ def setup() :
 
 ### Adding the curve in each grid cell
 
+![Curve grid](grid-curve.jpg)
+Each cell spwans a curve with a different value for ``k``
+
 ```python
 """
 Saves an image of a grid with a quadratic curve in each cell
