@@ -3,7 +3,7 @@
 Write-up and documentation my process for creating visual compositions using the concept of quadratic equations.
 
 ![Cover](cover.jpg)
-Beta version of the artwork using my building blocks
+Beta version of the artwork
 
 ## A starting point - painting curves with brushes
 In one atelier-session we were painting curves with brushes.I was amazed how easily an algorithmic compomposition can be done between two indiviuals. Later on I tried to recreate the algorithm in form of a python script and failed to achive the goals. This is a collection of my attempts to understand what it takes to create a visually interesting composition in the form of a python script.
@@ -20,7 +20,7 @@ There are many ways to create a curvy shape in Processing. You could look at the
 ## Imagine the following program
 
 ![Curve example](curve.jpg)
-An upwards pointing quadratic curve plotted with the code below.
+An image of an upwards pointing quadratic curve plotted with code.
 
 ```python
 """
@@ -52,11 +52,45 @@ def setup() :
 
     exit()
 ```
+
 ## What I found out about that k parameter
 It's been a while since I got introduced to quadratic curves in school, I had to freshen up my knowledge a bit. For the first sketch I work with the formula ``F(x) = k * x * x`` where k is a value that influences the shape of the curve in my drawing. When k is a negative value the curve opens upwards, when k is a positive value the downwards (in the processing coordinate system). The value of k affects how wide the curve opens and also will flatten out to a straight line when k approaches ``Infinity``.
 
+![Overlay](overlay.jpg)
+Overlay of 10 different values of k between -0.1 and 0.1
+
 ```python
-for x in range(-r, r):
-    y = k * x * x
-    point(x, y)
+"""
+Saves an image of multiple quadratic curves with the same origin
+"""
+
+def setup() :
+
+    # Create a 900x354 window
+    size(900, 354)
+
+    # Move the origin to the center
+    translate(width * 0.5, height * 0.5)
+
+    # Draw multiple curves on top of each other
+    for _ in range(10) :
+
+        # Calculate a different k for each curve
+        k = random(-0.01, 0.01)
+
+        # Cover the width as range for x
+        for x in range(int(-width*0.5), int(width*0.5)) :
+
+            # The k-parameter affects the look of the graph
+
+
+            # Calculate a y component with a quadratic formula
+            y = k * x * x
+
+            # Draw the points to the window
+            point(x, y)
+
+    # Done with calculation and drawing
+    save("out.jpg")
+    exit()
 ```
