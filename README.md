@@ -1,7 +1,7 @@
 # quadratic-curves
 Research on a visual composition of curves with the Processing IDE written in python mode.
 
-```
+```python
 def parabula(k, s):
     #beginShape()
     for x in range(-150, 150):
